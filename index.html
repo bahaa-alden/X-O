@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="selectbox">
+      <header>Tic Tac Toe</header>
+      <div class="content">
+        <div class="title">Select which you want to be ?</div>
+        <div class="opition">
+          <button class="selectXbtn">Player (X)</button>
+          <button class="selectObtn">Player (O)</button>
+        </div>
+      </div>
+    </div>
+    <div class="play-bord">
+      <div class="details">
+        <div class="players">
+          <span class="X-turn">X's turn</span
+          ><span class="O-turn">O's turn</span>
+          <div class="slider"></div>
+        </div>
+      </div>
+      <section class="one">
+        <span class="box1"></span>
+        <span class="box2"></span><span class="box3"></span>
+      </section>
+      <section class="two">
+        <span class="box4"></span><span class="box5"></span
+        ><span class="box6"></span>
+      </section>
+      <section class="three">
+        <span class="box7"></span><span class="box8"></span
+        ><span class="box9"></span>
+      </section>
+    </div>
+    <div class="winner">
+      <h2></h2>
+      <button class="replay">Replay</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

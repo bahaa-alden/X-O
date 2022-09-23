@@ -1,0 +1,190 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-weight: 600;
+  background: rgb(85, 186, 233);
+  font-family: "Poppins", sans-serif;
+}
+.selectbox,
+.play-bord,
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.selectbox {
+  background: white;
+  padding: 20px;
+  transition: all 0.3s ease;
+  max-width: 330px;
+  width: 100%;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+header {
+  font-size: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+.title {
+  padding: 15px 0;
+  font-size: 19px;
+}
+.opition {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+.opition button {
+  border: none;
+  color: white;
+  font-size: 19px;
+  padding: 8px 20px;
+  background: rgb(85, 186, 233);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.opition button:hover {
+  transform: scale(0.9);
+}
+.play-bord {
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.details {
+  position: relative;
+  background-color: white;
+  padding: 7px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+  color: rgb(85, 186, 233);
+}
+.details .players {
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.details span {
+  text-align: center;
+  padding: 9px 0;
+  position: relative;
+  z-index: 2;
+}
+.details .slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgb(85, 186, 233);
+  border-radius: 9px;
+}
+.players span:first-child {
+  color: white;
+}
+.players.active span:first-child {
+  color: rgb(85, 186, 233);
+}
+.players.active span:nth-child(2) {
+  color: white;
+}
+.players.active .slider {
+  transform: translateX(100%);
+}
+
+.play-bord section {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+.play-bord section span {
+  background-color: white;
+  color: rgb(85, 186, 233);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 7px;
+  font-size: 55px;
+  cursor: default;
+}
+.winner {
+  max-width: 330px;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.7s ease;
+  pointer-events: none;
+}
+.winner h2 {
+  padding-bottom: 20px;
+}
+.winner button {
+  cursor: pointer;
+  background: rgb(85, 186, 233);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 7px;
+  color: white;
+  font-size: 1.2em;
+}
+.hide {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+  z-index: 0;
+}
+.show {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 8;
+}
+@media (max-width: 350px) {
+  .selectbox,
+  .winner {
+    padding: 15px;
+    max-width: 300px;
+  }
+  header {
+    font-size: 22px;
+  }
+  .title {
+    font-size: 17px;
+  }
+  .opition {
+    justify-content: space-around;
+  }
+  .content .opition button {
+    font-size: 17px;
+  }
+  .winner .replay {
+    font-size: 1.2em;
+    padding: 8px 12px;
+  }
+  .winner h2 {
+    font-size: 1.3em;
+    padding-bottom: 15px;
+  }
+}
