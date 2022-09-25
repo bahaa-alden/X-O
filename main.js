@@ -48,18 +48,22 @@ window.onload = () => {
 };
 let xIcon = "fas fa-times";
 let oIcon = "far fa-circle";
+let can = true;
 function check(element) {
-  if (players.classList.contains("player")) {
-    element.innerHTML = `<i class="${oIcon}"></i>`;
-    players.classList.remove("active");
-    element.setAttribute("id", "O");
-  } else {
-    element.innerHTML = `<i class="${xIcon}"></i>`;
-    players.classList.add("active");
-    element.setAttribute("id", "X");
+  if (can) {
+    if (players.classList.contains("player")) {
+      element.innerHTML = `<i class="${oIcon}"></i>`;
+      players.classList.remove("active");
+      element.setAttribute("id", "O");
+    } else {
+      element.innerHTML = `<i class="${xIcon}"></i>`;
+      players.classList.add("active");
+      element.setAttribute("id", "X");
+    }
+    element.style.pointerEvents = "none";
+    can = false;
   }
 
-  element.style.pointerEvents = "none";
   let id = checkWinner();
 
   if (id === "X" || id === "O") {
@@ -75,6 +79,7 @@ function check(element) {
   }
   setTimeout(() => {
     bestmove();
+    can = true;
     let id = checkWinner();
     if (id === "X" || id === "O") {
       play.classList.remove("show");
@@ -88,7 +93,7 @@ function check(element) {
       winh.innerHTML = `No one won the game!`;
     }
     allbox.forEach((e) => console.log(e));
-  }, 100);
+  }, 0);
 }
 
 let cnt2 = 0;
