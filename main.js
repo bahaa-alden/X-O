@@ -26,14 +26,14 @@ window.onload = () => {
     play.classList.toggle("hide");
     can = true;
   };
-  selectXbtn.onclick = () => {
+  selectXbtn.onclick = function() {
     selectbox.classList.add("hide");
     play.classList.add("show");
     scores.O = 1;
     scores.X = -1;
     user.innerHTML = "User : X";
   };
-  selectObtn.onclick = () => {
+  selectObtn.onclick = function () {
     scores.X = 1;
     scores.O = -1;
     user.innerHTML = "User : O";
