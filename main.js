@@ -56,7 +56,7 @@ function check(element) {
   }
 
   element.style.pointerEvents = "none";
-  let id = win();
+  let id = checkWinner();
 
   if (id === "X" || id === "O") {
     play.classList.remove("show");
@@ -71,7 +71,7 @@ function check(element) {
   }
   setTimeout(() => {
     bestmove();
-    let id = win();
+    let id = checkWinner();
     if (id === "X" || id === "O") {
       play.classList.remove("show");
       play.classList.add("hide");
@@ -86,27 +86,7 @@ function check(element) {
     allbox.forEach((e) => console.log(e));
   }, 100);
 }
-function bot() {
-  let arr = [];
-  for (let i = 0; i < allbox.length; i++) {
-    if (!allbox[i].hasAttribute("id")) {
-      arr.push(i);
-    }
-  }
-  if (arr.length > 0) {
-    let ran = arr[Math.floor(Math.random() * arr.length)];
-    if (players.classList.contains("player")) {
-      allbox[ran].innerHTML = `<i class="${xIcon}"></i>`;
-      players.classList.add("active");
-      allbox[ran].setAttribute("id", "X");
-    } else {
-      allbox[ran].innerHTML = `<i class="${oIcon}"></i>`;
-      players.classList.remove("active");
-      allbox[ran].setAttribute("id", "O");
-    }
-    allbox[ran].style.pointerEvents = "none";
-  }
-}
+
 let cnt2 = 0;
 let board = [];
 let row = [];
@@ -123,82 +103,6 @@ for (let i = 0; i < allbox.length; i++) {
   if (i === allbox.length - 1) board.push(row);
 }
 
-function win() {
-  let cnt = 0;
-  let s1 = document.querySelectorAll(".one span");
-  let s2 = document.querySelectorAll(".two span");
-  let s3 = document.querySelectorAll(".three span");
-  for (let i = 0; i < 3; i++) {
-    for (let j = 0; j < 3; j++) {
-      if (board[i][j].innerHTML === "") cnt++;
-    }
-  }
-  if (
-    s1[0].id === s2[0].id &&
-    s1[0].id === s3[0].id &&
-    s1[0].id !== "" &&
-    s2[0].id !== "" &&
-    s3[0].id !== ""
-  ) {
-    return s1[0].id;
-  } else if (
-    s1[1].id === s2[1].id &&
-    s1[1].id === s3[1].id &&
-    s1[1].id !== "" &&
-    s2[1].id !== "" &&
-    s3[1].id !== ""
-  ) {
-    return s1[1].id;
-  } else if (
-    s1[2].id === s2[2].id &&
-    s1[2].id === s3[2].id &&
-    s1[2].id !== "" &&
-    s2[2].id !== "" &&
-    s3[2].id !== ""
-  ) {
-    return s1[2].id;
-  } else if (
-    s1[0].id === s2[1].id &&
-    s1[0].id === s3[2].id &&
-    s1[0].id !== "" &&
-    s2[1].id !== "" &&
-    s3[2].id !== ""
-  ) {
-    return s1[0].id;
-  } else if (
-    s1[2].id === s2[1].id &&
-    s1[2].id === s3[0].id &&
-    s1[2].id !== "" &&
-    s2[1].id !== "" &&
-    s3[0].id !== ""
-  ) {
-    return s1[2].id;
-  } else if (
-    s1[0].id === s1[1].id &&
-    s1[0].id === s1[2].id &&
-    s1[0].id !== "" &&
-    s1[1].id !== "" &&
-    s1[2].id !== ""
-  ) {
-    return s1[0].id;
-  } else if (
-    s2[0].id === s2[1].id &&
-    s2[0].id === s2[2].id &&
-    s2[0].id !== "" &&
-    s2[1].id !== "" &&
-    s2[2].id !== ""
-  ) {
-    return s2[0].id;
-  } else if (
-    s3[0].id === s3[1].id &&
-    s3[0].id === s3[2].id &&
-    s3[0].id !== "" &&
-    s3[1].id !== "" &&
-    s3[2].id !== ""
-  ) {
-    return s3[0].id;
-  } else if (cnt === 0) return "tie";
-}
 function bestmove() {
   let bestScore = -Infinity;
   let move;
