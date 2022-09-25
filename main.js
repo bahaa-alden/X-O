@@ -7,6 +7,11 @@ let allbox = document.querySelectorAll("section span");
 let winner = document.querySelector(".winner");
 let winh = document.querySelector(".winner h2");
 let replay = document.querySelector(".replay");
+let scores = {
+  X: 1,
+  O: -1,
+  tie: 0,
+};
 window.onload = () => {
   replay.onclick = () => {
     for (let i = 0; i < allbox.length; i++) {
@@ -22,8 +27,12 @@ window.onload = () => {
   selectXbtn.onclick = () => {
     selectbox.classList.add("hide");
     play.classList.add("show");
+    scores.X = -1;
+    scores.O = 1;
   };
   selectObtn.onclick = () => {
+    scores.X = 1;
+    scores.O = -1;
     selectbox.classList.add("hide");
     play.classList.add("show");
     players.setAttribute("class", "players active player");
@@ -223,11 +232,7 @@ function bestmove() {
     board[move.i][move.j].setAttribute("id", "O");
   }
 }
-let scores = {
-  X: 1,
-  O: -1,
-  tie: 0,
-};
+
 function minimax(board, depth, isMax) {
   let result = checkWinner();
   if (result !== null) {
