@@ -24,6 +24,7 @@ window.onload = () => {
     winner.classList.toggle("show");
     winner.classList.toggle("hide");
     play.classList.toggle("hide");
+    can = true;
   };
   selectXbtn.onclick = () => {
     selectbox.classList.add("hide");
@@ -46,8 +47,8 @@ window.onload = () => {
     allbox[i].setAttribute("onclick", "check(this)");
   }
 };
-let xIcon = "fas fa-times";
-let oIcon = "far fa-circle";
+let xIcon = "icon-close";
+let oIcon = "icon-radio-unchecked";
 let can = true;
 function check(element) {
   if (can) {
@@ -93,7 +94,7 @@ function check(element) {
       winh.innerHTML = `No one won the game!`;
     }
     allbox.forEach((e) => console.log(e));
-  }, 0);
+  }, 10);
 }
 
 let cnt2 = 0;
