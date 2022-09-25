@@ -30,12 +30,13 @@ window.onload = () => {
     play.classList.add("show");
     scores.O = 1;
     scores.X = -1;
-    user.innerHTML += "X";
+    user.innerHTML = "User : X";
   };
   selectObtn.onclick = () => {
     scores.X = 1;
     scores.O = -1;
-    user.innerHTML += "O";
+
+    user.innerHTML = "User : O";
 
     selectbox.classList.add("hide");
     play.classList.add("show");
