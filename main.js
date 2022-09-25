@@ -35,7 +35,6 @@ window.onload = () => {
   selectObtn.onclick = () => {
     scores.X = 1;
     scores.O = -1;
-
     user.innerHTML = "User : O";
 
     selectbox.classList.add("hide");
