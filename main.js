@@ -131,10 +131,12 @@ function bestmove() {
     board[move.i][move.j].innerHTML = `<i class="${xIcon}"></i>`;
     players.classList.add("active");
     board[move.i][move.j].setAttribute("id", "X");
+    board[move.i][move.j].style.pointerEvents = "none";
   } else {
     board[move.i][move.j].innerHTML = `<i class="${oIcon}"></i>`;
     players.classList.remove("active");
     board[move.i][move.j].setAttribute("id", "O");
+    board[move.i][move.j].style.pointerEvents = "none";
   }
 }
 
