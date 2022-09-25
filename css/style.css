@@ -126,6 +126,11 @@ header {
   font-size: 55px;
   cursor: default;
 }
+.user {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 10px;
+}
 .winner {
   max-width: 330px;
   width: 100%;

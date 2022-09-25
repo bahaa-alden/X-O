@@ -7,6 +7,7 @@ let allbox = document.querySelectorAll("section span");
 let winner = document.querySelector(".winner");
 let winh = document.querySelector(".winner h2");
 let replay = document.querySelector(".replay");
+let user = document.querySelector(".user");
 let scores = {
   X: 1,
   O: -1,
@@ -28,12 +29,14 @@ window.onload = () => {
     selectbox.classList.add("hide");
     play.classList.add("show");
     scores.O = 1;
-
     scores.X = -1;
+    user.innerHTML += "X";
   };
   selectObtn.onclick = () => {
     scores.X = 1;
     scores.O = -1;
+    user.innerHTML += "O";
+
     selectbox.classList.add("hide");
     play.classList.add("show");
     players.setAttribute("class", "players active player");
