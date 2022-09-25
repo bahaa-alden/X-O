@@ -27,8 +27,9 @@ window.onload = () => {
   selectXbtn.onclick = () => {
     selectbox.classList.add("hide");
     play.classList.add("show");
-    scores.X = -1;
     scores.O = 1;
+
+    scores.X = -1;
   };
   selectObtn.onclick = () => {
     scores.X = 1;
