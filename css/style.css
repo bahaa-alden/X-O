@@ -15,13 +15,16 @@ body {
 }
 .selectbox,
 .play-bord,
-.winner {
+.winner,
+.mode {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.selectbox {
+
+.selectbox,
+.mode {
   background: white;
   padding: 20px;
   transition: all 0.3s ease;
@@ -31,6 +34,24 @@ body {
   z-index: 1;
 }
 
+.btns {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 18px;
+  gap: 7px;
+}
+.mode .btns button {
+  border: none;
+  color: white;
+  font-size: 17px;
+  padding: 8px 10px;
+  background: rgb(85, 186, 233);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
 header {
   font-size: 25px;
   padding-bottom: 15px;
@@ -46,6 +67,7 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
 .opition button {
   border: none;
   color: white;
